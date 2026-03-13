@@ -56,10 +56,12 @@ const getMovieDetails = async (req, res) => {
 
         // Reformat the movie data returned
         const transformedData = {
-            title: response.data.Title,
-            year: response.data.Year,
-            runtime: response.data.Runtime,
-            genre: response.data.Genre
+            Title: response.data.Title,
+            Year: response.data.Year,
+            Runtime: response.data.Runtime,
+            Genre: response.data.Genre,
+            Type: response.data.Type,
+            imdbID: response.data.imdbID
         }
 
         res.status(200).json(transformedData)
