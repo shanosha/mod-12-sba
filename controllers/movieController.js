@@ -54,17 +54,7 @@ const getMovieDetails = async (req, res) => {
             return res.status(404).json({ error: response.data.Error })
         }
 
-        // Reformat the movie data returned
-        const transformedData = {
-            Title: response.data.Title,
-            Year: response.data.Year,
-            Runtime: response.data.Runtime,
-            Genre: response.data.Genre,
-            Type: response.data.Type,
-            imdbID: response.data.imdbID
-        }
-
-        res.status(200).json(transformedData)
+        res.status(200).json(response.data)
     }
     catch (err) {
         res.status(502).json({ error: 'A network error occurred' })
