@@ -27,22 +27,14 @@ const searchMovies = async (req, res) => {
         }
 
         // Await the axios get request
-        const response = await movieClient.get(`?apikey=${OMDB_API_KEY}&t=${req.query.title}`)
+        const response = await movieClient.get(`?apikey=${OMDB_API_KEY}&s=${req.query.title}`)
         
         // If the response does not include a movie, return an error
         if(response.data.Response == "False") {
             return res.status(404).json({ error: response.data.Error })
         }
 
-        // Reformat the movie data returned
-        const transformedData = {
-            title: response.data.Title,
-            year: response.data.Year,
-            runtime: response.data.Runtime,
-            genre: response.data.Genre
-        }
-
-        res.status(200).json(transformedData)
+        res.status(200).json(response.data.Search)
     }
     catch (err) {
         res.status(502).json({ error: 'A network error occurred' })
