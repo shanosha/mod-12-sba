@@ -22,7 +22,7 @@ cd mod-12-sba
 npm install
 ```
 
-- Run the Express.js server using nodemon
+- Run the Express server using nodemon.
 
 ```
 npm run dev
@@ -32,6 +32,6 @@ npm run dev
 
 ## Using the RESTful API Server
 
-Test the API endpoints using a tool like Postman or by visiting the URLs in your browser.
-http://localhost:3001/api/search?title=batman
-http://localhost:3001/api/movies/tt0372784
+Test the API endpoints using a tool like Postman or by visiting the URLs in your browser. Here are two endpoints to test:
+- /api/search?title=batman
+- /api/movies/tt0372784
