@@ -22,13 +22,18 @@ cd mod-12-sba
 npm install
 ```
 
+- Setup your API key and port in a .env file
+
+```
+OMDB_API_KEY="YOUR_API_KEY_HERE"
+PORT=3000
+```  
+
 - Run the Express server using nodemon.
 
 ```
 npm run dev
 ```
-
-- Open the server URL in a browser.
 
 ## Using the RESTful API Server
 
